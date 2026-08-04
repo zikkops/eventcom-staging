@@ -1,8 +1,6 @@
 import Link from "next/link";
 import StatCounter from "@/components/StatCounter";
 
-const UP = "https://eventcom.vipmindslb.com/wp-content/uploads/2026/05";
-
 const methodSteps = [
   {
     title: "Insight",
@@ -59,19 +57,41 @@ const serviceRows = [
 ];
 
 const brandLogos = [
-  "BMW.png",
-  "CAB-XL-Logo-white.png",
-  "Cartier.png",
-  "DAHAMANI.png",
-  "Gevency.png",
-  "Italian-Embassy.c.png",
-  "Jaeger.png",
-  "Lucid.c.png",
-  "O100.c.png",
-  "REMOWA.png",
-  "SGC.png",
-  "Solitaire.c.png",
-].map((file) => `${UP}/${file}`);
+  "almaviva.png",
+  "ambassade-de-france.png",
+  "benefit-cosmetics-logo-1.png",
+  "black-tap.png",
+  "business-france.png",
+  "bvlgari.png",
+  "corneliani-white-transparent.png",
+  "dhow.png",
+  "fairmont.png",
+  "fred.png",
+  "isabel-mayfair.png",
+  "ita.png",
+  "iwc.png",
+  "kiko-milano-white-transparent-exact.png",
+  "ksp-white.png",
+  "la-french-touch.png",
+  "lamborghini.png",
+  "lucid-owners-clube.png",
+  "lucidc.png",
+  "marli.png",
+  "maxmara.png",
+  "millerknoll.png",
+  "mjs.png",
+  "mont-blanc.png",
+  "okx.png",
+  "panerai.png",
+  "pasquale-bruni.png",
+  "piaget-logo-1.png",
+  "range-rover.png",
+  "sfs.png",
+  "tagheuer.png",
+  "tiffany-co-idt7es3ldx-1.png",
+  "time-vallee.png",
+  "van-cleef.png",
+].map((file) => `/logos/${file}`);
 
 const workCategories = [
   {
