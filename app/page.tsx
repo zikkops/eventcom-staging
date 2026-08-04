@@ -37,10 +37,7 @@ const serviceRows = [
     title: "Experiential Marketing",
     copy: "Immersive brand activations, pop-ups, and interactive environments.",
     bullets: ["Brand activations", "Pop-up concepts", "Interactive environments"],
-    images: [
-      "https://eventcom.vipmindslb.com/wp-content/uploads/2026/06/Copy-of-DSC04901-scaled.jpeg",
-      "https://eventcom.vipmindslb.com/wp-content/uploads/2026/06/Copy-of-DSC01408-scaled.jpg",
-    ],
+    images: ["/homepage/experiential-1.jpg", "/homepage/experiential-2.jpg"],
   },
   {
     ghost: "Corporate",
@@ -57,10 +54,7 @@ const serviceRows = [
     title: "Formal Occasions",
     copy: "Elegant celebrations and milestone moments that leave a mark.",
     bullets: ["Gala dinners", "Award ceremonies", "Private celebrations"],
-    images: [
-      "https://eventcom.vipmindslb.com/wp-content/uploads/2026/06/DJI_20250529200106_0010_D-scaled.jpg",
-      "https://eventcom.vipmindslb.com/wp-content/uploads/2026/06/Copy-of-CH015741-scaled.jpg",
-    ],
+    images: ["/homepage/formal-1.jpg", "/homepage/formal-2.jpg"],
   },
 ];
 
