@@ -5,6 +5,7 @@ export type EventItem = {
   heroImage: string;
   cardImage: string;
   album: string[];
+  video?: string;
 };
 
 export const events: EventItem[] = [
@@ -12,8 +13,8 @@ export const events: EventItem[] = [
     slug: "cartier",
     brand: "Cartier",
     kicker: "Selected Work",
-    heroImage: "/work/cartier/cartier-01.png",
-    cardImage: "/work/cartier/cartier-01.png",
+    heroImage: "/covers/cartier.jpg",
+    cardImage: "/covers/cartier.jpg",
     album: [
       "/work/cartier/cartier-01.png",
       "/work/cartier/cartier-02.jpg",
@@ -24,8 +25,8 @@ export const events: EventItem[] = [
     slug: "tiffany",
     brand: "Tiffany",
     kicker: "Selected Work",
-    heroImage: "/work/tiffany/tiffany-01.jpg",
-    cardImage: "/work/tiffany/tiffany-01.jpg",
+    heroImage: "/covers/tiffany.jpg",
+    cardImage: "/covers/tiffany.jpg",
     album: [
       "/work/tiffany/tiffany-01.jpg",
       "/work/tiffany/tiffany-02.jpg",
@@ -45,11 +46,11 @@ export const events: EventItem[] = [
     ],
   },
   {
-    slug: "bvlgari-perfume",
-    brand: "BVLGARI – Perfume",
+    slug: "bvlgari",
+    brand: "BVLGARI",
     kicker: "Selected Work",
-    heroImage: "/work/bvlgari-perfume/bvlgari-perfume-01.jpg",
-    cardImage: "/work/bvlgari-perfume/bvlgari-perfume-01.jpg",
+    heroImage: "/covers/bvlgari.jpg",
+    cardImage: "/covers/bvlgari.jpg",
     album: [
       "/work/bvlgari-perfume/bvlgari-perfume-01.jpg",
       "/work/bvlgari-perfume/bvlgari-perfume-02.jpg",
@@ -63,15 +64,6 @@ export const events: EventItem[] = [
       "/work/bvlgari-perfume/bvlgari-perfume-10.jpg",
       "/work/bvlgari-perfume/bvlgari-perfume-11.jpg",
       "/work/bvlgari-perfume/bvlgari-perfume-12.jpg",
-    ],
-  },
-  {
-    slug: "bvlgari-jewellery",
-    brand: "BVLGARI – Jewellery",
-    kicker: "Selected Work",
-    heroImage: "/work/bvlgari-jewellery/bvlgari-jewellery-01.jpg",
-    cardImage: "/work/bvlgari-jewellery/bvlgari-jewellery-01.jpg",
-    album: [
       "/work/bvlgari-jewellery/bvlgari-jewellery-01.jpg",
       "/work/bvlgari-jewellery/bvlgari-jewellery-02.jpg",
       "/work/bvlgari-jewellery/bvlgari-jewellery-03.jpg",
@@ -90,8 +82,8 @@ export const events: EventItem[] = [
     slug: "piaget",
     brand: "Piaget",
     kicker: "Selected Work",
-    heroImage: "/work/piaget/piaget-01.jpg",
-    cardImage: "/work/piaget/piaget-01.jpg",
+    heroImage: "/covers/piaget.jpg",
+    cardImage: "/covers/piaget.jpg",
     album: [
       "/work/piaget/piaget-01.jpg",
       "/work/piaget/piaget-02.jpg",
@@ -117,8 +109,8 @@ export const events: EventItem[] = [
     slug: "dhamani",
     brand: "Dhamani",
     kicker: "Selected Work",
-    heroImage: "/work/dhamani/dhamani-01.jpg",
-    cardImage: "/work/dhamani/dhamani-01.jpg",
+    heroImage: "/covers/dhamani.jpg",
+    cardImage: "/covers/dhamani.jpg",
     album: [
       "/work/dhamani/dhamani-01.jpg",
       "/work/dhamani/dhamani-02.jpg",
@@ -132,8 +124,8 @@ export const events: EventItem[] = [
     slug: "marli",
     brand: "Marli",
     kicker: "Selected Work",
-    heroImage: "/work/marli/marli-01.jpg",
-    cardImage: "/work/marli/marli-01.jpg",
+    heroImage: "/covers/marli.jpg",
+    cardImage: "/covers/marli.jpg",
     album: [
       "/work/marli/marli-01.jpg",
       "/work/marli/marli-02.jpg",
@@ -147,8 +139,8 @@ export const events: EventItem[] = [
     slug: "van-cleef",
     brand: "Van Cleef",
     kicker: "Selected Work",
-    heroImage: "/work/van-cleef/van-cleef-01.jpg",
-    cardImage: "/work/van-cleef/van-cleef-01.jpg",
+    heroImage: "/covers/van-cleef.jpg",
+    cardImage: "/covers/van-cleef.jpg",
     album: [
       "/work/van-cleef/van-cleef-01.jpg",
       "/work/van-cleef/van-cleef-02.jpg",
@@ -162,8 +154,8 @@ export const events: EventItem[] = [
     slug: "damiani",
     brand: "Damiani",
     kicker: "Selected Work",
-    heroImage: "/work/damiani/damiani-01.jpg",
-    cardImage: "/work/damiani/damiani-01.jpg",
+    heroImage: "/covers/damiani.jpg",
+    cardImage: "/covers/damiani.jpg",
     album: [
       "/work/damiani/damiani-01.jpg",
       "/work/damiani/damiani-02.jpg",
@@ -177,8 +169,8 @@ export const events: EventItem[] = [
     slug: "sjc",
     brand: "SJC",
     kicker: "Selected Work",
-    heroImage: "/work/sjc/sjc-01.jpg",
-    cardImage: "/work/sjc/sjc-01.jpg",
+    heroImage: "/covers/sjc.jpg",
+    cardImage: "/covers/sjc.jpg",
     album: [
       "/work/sjc/sjc-01.jpg",
       "/work/sjc/sjc-02.jpg",
@@ -192,8 +184,8 @@ export const events: EventItem[] = [
     slug: "fred",
     brand: "Fred",
     kicker: "Selected Work",
-    heroImage: "/work/fred/fred-01.jpg",
-    cardImage: "/work/fred/fred-01.jpg",
+    heroImage: "/covers/fred.jpg",
+    cardImage: "/covers/fred.jpg",
     album: [
       "/work/fred/fred-01.jpg",
       "/work/fred/fred-02.jpg",
@@ -207,8 +199,8 @@ export const events: EventItem[] = [
     slug: "jaeger-le-coultre",
     brand: "Jaeger-LeCoultre",
     kicker: "Selected Work",
-    heroImage: "/work/jaeger-le-coultre/jaeger-le-coultre-01.jpg",
-    cardImage: "/work/jaeger-le-coultre/jaeger-le-coultre-01.jpg",
+    heroImage: "/covers/jaeger-le-coultre.jpg",
+    cardImage: "/covers/jaeger-le-coultre.jpg",
     album: [
       "/work/jaeger-le-coultre/jaeger-le-coultre-01.jpg",
       "/work/jaeger-le-coultre/jaeger-le-coultre-02.jpg",
@@ -222,8 +214,8 @@ export const events: EventItem[] = [
     slug: "mont-blanc",
     brand: "Mont Blanc",
     kicker: "Selected Work",
-    heroImage: "/work/mont-blanc/mont-blanc-01.jpg",
-    cardImage: "/work/mont-blanc/mont-blanc-01.jpg",
+    heroImage: "/covers/mont-blanc.jpg",
+    cardImage: "/covers/mont-blanc.jpg",
     album: [
       "/work/mont-blanc/mont-blanc-01.jpg",
       "/work/mont-blanc/mont-blanc-02.jpg",
@@ -243,8 +235,8 @@ export const events: EventItem[] = [
     slug: "panerai",
     brand: "Panerai",
     kicker: "Selected Work",
-    heroImage: "/work/panerai/panerai-01.jpg",
-    cardImage: "/work/panerai/panerai-01.jpg",
+    heroImage: "/covers/panerai.jpg",
+    cardImage: "/covers/panerai.jpg",
     album: [
       "/work/panerai/panerai-01.jpg",
       "/work/panerai/panerai-02.jpg",
@@ -261,8 +253,8 @@ export const events: EventItem[] = [
     slug: "kiko-milano",
     brand: "Kiko Milano",
     kicker: "Selected Work",
-    heroImage: "/work/kiko-milano/kiko-milano-01.jpg",
-    cardImage: "/work/kiko-milano/kiko-milano-01.jpg",
+    heroImage: "/covers/kiko-milano.jpg",
+    cardImage: "/covers/kiko-milano.jpg",
     album: [
       "/work/kiko-milano/kiko-milano-01.jpg",
       "/work/kiko-milano/kiko-milano-02.jpg",
@@ -276,8 +268,8 @@ export const events: EventItem[] = [
     slug: "benefit",
     brand: "Benefit",
     kicker: "Selected Work",
-    heroImage: "/work/benefit/benefit-01.jpg",
-    cardImage: "/work/benefit/benefit-01.jpg",
+    heroImage: "/covers/benefit.jpg",
+    cardImage: "/covers/benefit.jpg",
     album: [
       "/work/benefit/benefit-01.jpg",
       "/work/benefit/benefit-02.jpg",
@@ -288,8 +280,8 @@ export const events: EventItem[] = [
     slug: "millerknoll",
     brand: "MillerKnoll",
     kicker: "Selected Work",
-    heroImage: "/work/millerknoll/millerknoll-01.jpg",
-    cardImage: "/work/millerknoll/millerknoll-01.jpg",
+    heroImage: "/covers/millerknoll.jpg",
+    cardImage: "/covers/millerknoll.jpg",
     album: [
       "/work/millerknoll/millerknoll-01.jpg",
       "/work/millerknoll/millerknoll-02.jpg",
@@ -303,8 +295,8 @@ export const events: EventItem[] = [
     slug: "black-tap",
     brand: "Black Tap",
     kicker: "Selected Work",
-    heroImage: "/work/black-tap/black-tap-01.jpg",
-    cardImage: "/work/black-tap/black-tap-01.jpg",
+    heroImage: "/covers/black-tap.jpg",
+    cardImage: "/covers/black-tap.jpg",
     album: [
       "/work/black-tap/black-tap-01.jpg",
       "/work/black-tap/black-tap-02.jpg",
@@ -330,8 +322,8 @@ export const events: EventItem[] = [
     slug: "isabel-mayfair",
     brand: "Isabel Mayfair",
     kicker: "Selected Work",
-    heroImage: "/work/isabel-mayfair/isabel-mayfair-01.jpg",
-    cardImage: "/work/isabel-mayfair/isabel-mayfair-01.jpg",
+    heroImage: "/covers/isabel-mayfair.jpg",
+    cardImage: "/covers/isabel-mayfair.jpg",
     album: [
       "/work/isabel-mayfair/isabel-mayfair-01.jpg",
       "/work/isabel-mayfair/isabel-mayfair-02.jpg",
@@ -345,8 +337,8 @@ export const events: EventItem[] = [
     slug: "lucid",
     brand: "Lucid",
     kicker: "Selected Work",
-    heroImage: "/work/lucid/lucid-01.jpg",
-    cardImage: "/work/lucid/lucid-01.jpg",
+    heroImage: "/covers/lucid.jpg",
+    cardImage: "/covers/lucid.jpg",
     album: [
       "/work/lucid/lucid-01.jpg",
       "/work/lucid/lucid-02.jpg",
@@ -387,8 +379,8 @@ export const events: EventItem[] = [
     slug: "udc",
     brand: "AlUla",
     kicker: "Selected Work",
-    heroImage: "/work/udc/udc-01.jpg",
-    cardImage: "/work/udc/udc-01.jpg",
+    heroImage: "/covers/udc.jpg",
+    cardImage: "/covers/udc.jpg",
     album: [
       "/work/udc/udc-01.jpg",
       "/work/udc/udc-02.png",
@@ -411,8 +403,8 @@ export const events: EventItem[] = [
     slug: "fairmont",
     brand: "Fairmont",
     kicker: "Selected Work",
-    heroImage: "/work/fairmont/fairmont-01.jpg",
-    cardImage: "/work/fairmont/fairmont-01.jpg",
+    heroImage: "/covers/fairmont.jpg",
+    cardImage: "/covers/fairmont.jpg",
     album: [
       "/work/fairmont/fairmont-01.jpg",
       "/work/fairmont/fairmont-02.jpg",
@@ -426,8 +418,8 @@ export const events: EventItem[] = [
     slug: "okx",
     brand: "OKX",
     kicker: "Selected Work",
-    heroImage: "/work/okx/okx-01.jpg",
-    cardImage: "/work/okx/okx-01.jpg",
+    heroImage: "/covers/okx.jpg",
+    cardImage: "/covers/okx.jpg",
     album: [
       "/work/okx/okx-01.jpg",
       "/work/okx/okx-02.jpg",
@@ -441,8 +433,9 @@ export const events: EventItem[] = [
     slug: "ksp",
     brand: "King Salman Park",
     kicker: "Selected Work",
-    heroImage: "/work/ksp/ksp-01.jpg",
-    cardImage: "/work/ksp/ksp-01.jpg",
+    heroImage: "/covers/ksp.jpg",
+    cardImage: "/covers/ksp.jpg",
+    video: "/work/ksp/ksp-event.mp4",
     album: [
       "/work/ksp/ksp-01.jpg",
       "/work/ksp/ksp-02.jpg",

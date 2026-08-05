@@ -52,6 +52,22 @@ export default async function EventPage({
         </div>
       </section>
 
+      {event.video && (
+        <section className="section event-overview">
+          <div className="services-heading">
+            <div className="small-label">Watch</div>
+            <h2>Event film.</h2>
+          </div>
+          <video
+            className="event-video"
+            src={event.video}
+            poster={event.heroImage}
+            controls
+            playsInline
+          />
+        </section>
+      )}
+
       <section id="album" className="section services">
         <div className="services-heading">
           <div className="small-label">Photo Album</div>
