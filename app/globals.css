@@ -119,7 +119,7 @@ a {
     linear-gradient(90deg, rgba(2,7,17,0.96) 0%, rgba(2,7,17,0.72) 46%, rgba(2,7,17,0.25) 100%),
     url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=1800&auto=format&fit=crop');
   background-size: cover;
-  background-position: center;
+  background-position: center center;
 }
 
 .hero::after {
@@ -543,7 +543,7 @@ a {
     radial-gradient(circle at 82% 38%, rgba(240,0,168,0.20), transparent 24%),
     url('https://images.unsplash.com/photo-1557682250-33bd709cbe85?q=80&w=1800&auto=format&fit=crop');
   background-size: cover;
-  background-position: center;
+  background-position: center center;
 }
 
 .how h2 {
@@ -592,7 +592,7 @@ a {
     linear-gradient(90deg, rgba(2,7,17,0.18), rgba(2,7,17,0.78) 78%, rgba(2,7,17,0.96)),
     url('https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=1300&auto=format&fit=crop');
   background-size: cover;
-  background-position: center;
+  background-position: center center;
   opacity: 0.64;
 }
 
@@ -602,7 +602,7 @@ a {
     linear-gradient(90deg, rgba(2,7,17,0.96), rgba(2,7,17,0.62) 35%, rgba(2,7,17,0.28)),
     url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=1300&auto=format&fit=crop');
   background-size: cover;
-  background-position: center;
+  background-position: center center;
   opacity: 0.58;
 }
 
@@ -647,6 +647,13 @@ a {
     var(--bg);
 }
 
+/* The brand portfolio grid is tall enough that the radial glows above land
+   inside the grid itself, showing as a bright band behind the first couple
+   of rows -- keep this section's own background flat. */
+#brand-work {
+  background: var(--bg);
+}
+
 .work-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -668,7 +675,7 @@ a {
     linear-gradient(180deg, rgba(2,7,17,0.05), rgba(2,7,17,0.92)),
     var(--image);
   background-size: cover;
-  background-position: center;
+  background-position: center center;
   transition: 0.5s ease;
 }
 
@@ -708,7 +715,7 @@ a {
     linear-gradient(90deg, rgba(2,7,17,0.92), rgba(2,7,17,0.64)),
     url('https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=1800&auto=format&fit=crop');
   background-size: cover;
-  background-position: center;
+  background-position: center center;
 }
 
 .contact h2 {
@@ -915,7 +922,7 @@ a {
     linear-gradient(90deg, rgba(2,7,17,0.94) 0%, rgba(2,7,17,0.66) 48%, rgba(2,7,17,0.24) 100%),
     var(--hero-image);
   background-size: cover;
-  background-position: center;
+  background-position: center center;
   opacity:.92;
 }
 .page-hero::after {
@@ -954,7 +961,7 @@ a {
   min-height:460px;
   background:linear-gradient(180deg, rgba(2,7,17,.1), rgba(2,7,17,.78)), var(--image);
   background-size:cover;
-  background-position:center;
+  background-position:center center;
   border:1px solid var(--line);
 }
 .service-detail { display:grid; grid-template-columns:.7fr 1.2fr .8fr; gap:36px; align-items:center; padding:38px 0; border-bottom:1px solid var(--line); }
@@ -965,7 +972,7 @@ a {
 .service-tags { display:flex; flex-wrap:wrap; gap:10px; }
 .service-tags b { padding:10px 12px; border:1px solid var(--line); color:rgba(255,255,255,.68); font-size:10px; letter-spacing:.18em; text-transform:uppercase; }
 .case-card { min-height:420px; position:relative; overflow:hidden; border:1px solid var(--line); }
-.case-card::before { content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(2,7,17,.04), rgba(2,7,17,.92)), var(--image); background-size:cover; background-position:center; transition:.45s ease; }
+.case-card::before { content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(2,7,17,.04), rgba(2,7,17,.92)), var(--image); background-size:cover; background-position:center center; transition:.45s ease; }
 .case-card:hover::before { transform:scale(1.06); }
 .case-content { position:absolute; inset:auto 0 0 0; padding:28px; }
 .case-content span { color:var(--cyan); display:block; font-size:10px; font-weight:900; letter-spacing:.24em; margin-bottom:14px; text-transform:uppercase; }
@@ -1012,9 +1019,8 @@ a {
 }
 .brand-card {
   position: relative;
-  min-height: 430px;
+  aspect-ratio: 16 / 9;
   overflow: hidden;
-  border: 1px solid var(--line);
   background: #07111d;
   display: block;
 }
@@ -1022,9 +1028,10 @@ a {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(2,7,17,.06), rgba(2,7,17,.38) 44%, rgba(2,7,17,.95)), var(--image);
+  background: linear-gradient(180deg, rgba(2,7,17,.35), rgba(2,7,17,.38) 44%, rgba(2,7,17,.95)), var(--image);
   background-size: cover;
-  background-position: center;
+  background-position: center center;
+  transform: scale(1.05);
   transition: .5s ease;
 }
 .brand-card::after {
@@ -1034,7 +1041,7 @@ a {
   background: radial-gradient(circle at 18% 18%, rgba(240,0,168,.28), transparent 30%), radial-gradient(circle at 86% 30%, rgba(0,255,213,.16), transparent 26%);
   opacity: .75;
 }
-.brand-card:hover::before { transform: scale(1.06); }
+.brand-card:hover::before { transform: scale(1.1); }
 .brand-card-top,
 .brand-card-content { position: absolute; z-index: 2; left: 26px; right: 26px; }
 .brand-card-top { top: 24px; display: flex; justify-content: space-between; gap: 16px; align-items: center; }
@@ -1088,7 +1095,7 @@ a {
   box-shadow: none;
   background: var(--image);
   background-size: cover;
-  background-position: center;
+  background-position: center center;
 }
 .album-item:focus-visible {
   outline: 2px solid var(--cyan);
@@ -1205,7 +1212,7 @@ a {
     linear-gradient(90deg, rgba(2,7,17,0.92), rgba(2,7,17,0.64)),
     url('https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?q=80&w=1800&auto=format&fit=crop');
   background-size: cover;
-  background-position: center;
+  background-position: center center;
 }
 @media (max-width: 1100px) { .brand-card-grid, .album-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 700px) { .brand-card-grid, .album-grid { grid-template-columns: 1fr; } .brand-card, .album-item { min-height: 330px; } }
+@media (max-width: 700px) { .brand-card-grid, .album-grid { grid-template-columns: 1fr; } .album-item { min-height: 330px; } }
