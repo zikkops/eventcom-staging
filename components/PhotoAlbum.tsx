@@ -2,7 +2,13 @@
 
 import { useCallback, useEffect, useState } from "react";
 
-export default function PhotoAlbum({ images }: { images: string[] }) {
+export default function PhotoAlbum({
+  images,
+  vertical = false,
+}: {
+  images: string[];
+  vertical?: boolean;
+}) {
   const [index, setIndex] = useState<number | null>(null);
 
   const close = useCallback(() => setIndex(null), []);
@@ -33,7 +39,7 @@ export default function PhotoAlbum({ images }: { images: string[] }) {
 
   return (
     <>
-      <div className="album-grid">
+      <div className={`album-grid${vertical ? " album-grid-vertical" : ""}`}>
         {images.map((image, i) => (
           <button
             key={image}

@@ -1077,6 +1077,10 @@ a {
   grid-template-columns: repeat(3, 1fr);
   gap: 18px;
 }
+.album-grid-vertical .album-item {
+  aspect-ratio: 3 / 4;
+  min-height: 0;
+}
 .album-item {
   position: relative;
   min-height: 320px;

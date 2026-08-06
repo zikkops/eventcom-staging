@@ -73,7 +73,7 @@ export default async function EventPage({
           <div className="small-label">Photo Album</div>
           <h2>Event moments.</h2>
         </div>
-        <PhotoAlbum images={event.album} />
+        <PhotoAlbum images={event.album} vertical={event.verticalAlbum} />
       </section>
 
       <section className="section contact mini-contact">

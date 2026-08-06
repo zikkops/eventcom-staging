@@ -6,6 +6,7 @@ export type EventItem = {
   cardImage: string;
   album: string[];
   video?: string;
+  verticalAlbum?: boolean;
 };
 
 export const events: EventItem[] = [
@@ -21,16 +22,12 @@ export const events: EventItem[] = [
       "/work/cartier/cartier-03.jpg",
       "/work/cartier/cartier-04.jpg",
       "/work/cartier/cartier-05.jpg",
-      "/work/cartier/cartier-06.jpg",
       "/work/cartier/cartier-07.jpg",
       "/work/cartier/cartier-08.jpg",
       "/work/cartier/cartier-09.jpg",
       "/work/cartier/cartier-10.jpg",
-      "/work/cartier/cartier-11.jpg",
       "/work/cartier/cartier-12.jpg",
-      "/work/cartier/cartier-13.jpg",
       "/work/cartier/cartier-14.jpg",
-      "/work/cartier/cartier-15.jpg",
     ],
   },
   {
@@ -198,6 +195,7 @@ export const events: EventItem[] = [
     kicker: "Selected Work",
     heroImage: "/covers/fred.jpg",
     cardImage: "/covers/fred.jpg",
+    verticalAlbum: true,
     album: [
       "/work/fred/fred-01.jpg",
       "/work/fred/fred-02.jpg",
