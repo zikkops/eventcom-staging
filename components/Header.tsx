@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -17,7 +18,13 @@ export default function Header() {
   return (
     <header className="nav">
       <Link className="brand" href="/">
-        Eventcom
+        <Image
+          src="/eventcom-logo.png"
+          alt="Eventcom"
+          width={196}
+          height={40}
+          priority
+        />
       </Link>
       <nav className="nav-links">
         {links.map((link) => {

@@ -40,18 +40,22 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 48px;
+  padding: 0 48px;
   background: rgba(2, 7, 17, 0.68);
   border-bottom: 1px solid rgba(255,255,255,0.08);
   backdrop-filter: blur(18px);
 }
 
 .brand {
-  font-size: 20px;
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: 0.28em;
-  color: var(--pink);
+  display: flex;
+  align-items: center;
+  padding: 14px 0;
+}
+
+.brand img {
+  display: block;
+  height: 40px;
+  width: auto;
 }
 
 .nav-links {
@@ -745,14 +749,13 @@ a {
   display: grid;
   grid-template-columns: 1fr 1.5fr 0.8fr;
   gap: 48px;
+  align-items: center;
 }
 
-.footer-brand {
-  color: var(--pink);
-  font-size: 20px;
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: 0.28em;
+.footer-brand img {
+  display: block;
+  height: 36px;
+  width: auto;
 }
 
 .footer p,
@@ -770,8 +773,9 @@ a {
 
 .footer-cols {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 1fr;
   gap: 32px;
+  justify-items: center;
 }
 
 .footer h4 {
@@ -787,6 +791,10 @@ a {
 .connect {
   display: grid;
   gap: 12px;
+}
+
+.connect {
+  align-self: start;
 }
 
 .footer-bottom {
@@ -862,13 +870,8 @@ a {
     padding-right: 24px;
   }
 
-  .nav {
-    padding-top: 16px;
-    padding-bottom: 16px;
-  }
-
-  .brand {
-    font-size: 14px;
+  .brand img {
+    height: 28px;
   }
 
   .stats-grid,
