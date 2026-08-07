@@ -38,22 +38,26 @@ export default function ContactPage() {
             </p>
             <div className="info-list">
               <div>
-                <strong>Email</strong>
-                <span>hello@eventcom.com</span>
+                <strong>Website</strong>
+                <span>eventcom-me.com</span>
               </div>
               <div>
-                <strong>Phone</strong>
-                <span>+971 50 123 4567</span>
+                <strong>Email</strong>
+                <span>elias.eid@eventcom-me.com</span>
+              </div>
+              <div>
+                <strong>Mobile</strong>
+                <span>+966 57 011 6716</span>
               </div>
               <div>
                 <strong>Location</strong>
-                <span>Dubai, UAE · Regional event delivery</span>
+                <span>Beirut | Dubai | Abu Dhabi | Riyadh | Jeddah</span>
               </div>
             </div>
           </div>
           <form
             className="contact-form"
-            action="mailto:hello@eventcom.com"
+            action="mailto:elias.eid@eventcom-me.com"
             method="post"
             encType="text/plain"
           >

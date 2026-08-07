@@ -29,21 +29,20 @@ export default function Footer() {
           <div className="footer-col">
             <h4>Work</h4>
             <Link href="/work">Featured Projects</Link>
-            <Link href="/work#brand-work">Brand Portfolio</Link>
             <Link href="/contact">Client Stories</Link>
           </div>
           <div className="footer-col">
             <h4>Insights</h4>
             <Link href="/work">Articles</Link>
             <Link href="/work">Trends</Link>
-            <Link href="/contact">Resources</Link>
           </div>
         </div>
         <div className="connect">
           <h4>Let&rsquo;s Connect</h4>
-          <span>hello@eventcom.com</span>
-          <span>+971 50 123 4567</span>
-          <span>Dubai, UAE</span>
+          <span>eventcom-me.com</span>
+          <span>elias.eid@eventcom-me.com</span>
+          <span>+966 57 011 6716</span>
+          <span>Beirut | Dubai | Abu Dhabi | Riyadh | Jeddah</span>
         </div>
       </div>
       <div className="footer-bottom">
