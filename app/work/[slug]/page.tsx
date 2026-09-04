@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { events, getEventBySlug } from "@/data/events";
+import { events, getEventBySlug, hasEventPage } from "@/data/events";
 import PhotoAlbum from "@/components/PhotoAlbum";
+import EventFilms from "@/components/EventFilms";
 
 export function generateStaticParams() {
-  return events.map((event) => ({ slug: event.slug }));
+  return events.filter(hasEventPage).map((event) => ({ slug: event.slug }));
 }
 
 export async function generateMetadata({
@@ -51,6 +52,16 @@ export default async function EventPage({
           </div>
         </div>
       </section>
+
+      {event.films && event.films.some((film) => film.vimeoId) && (
+        <section className="section event-overview">
+          <div className="services-heading">
+            <div className="small-label">Watch</div>
+            <h2>Event films.</h2>
+          </div>
+          <EventFilms films={event.films} />
+        </section>
+      )}
 
       {event.video && (
         <section className="section event-overview">

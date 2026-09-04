@@ -1,3 +1,11 @@
+export type EventFilm = {
+  /** Vimeo clip id, e.g. "1222695290". */
+  vimeoId: string;
+  title: string;
+  /** Cover photo shown before the film is played. */
+  poster: string;
+};
+
 export type EventItem = {
   slug: string;
   brand: string;
@@ -7,6 +15,13 @@ export type EventItem = {
   album: string[];
   video?: string;
   verticalAlbum?: boolean;
+  /**
+   * Vimeo clip id for a project that has no inner page: the work grid card
+   * opens the film straight into a lightbox instead of linking to /work/[slug].
+   */
+  vimeoId?: string;
+  /** Films shown on the inner page, each behind a cover photo. */
+  films?: EventFilm[];
 };
 
 export const events: EventItem[] = [
@@ -59,6 +74,13 @@ export const events: EventItem[] = [
     kicker: "Selected Work",
     heroImage: "/covers/tiffany.jpg",
     cardImage: "/covers/tiffany.jpg",
+    films: [
+      {
+        vimeoId: "",
+        title: "Tiffany Event Film",
+        poster: "/covers/tiffany.jpg",
+      },
+    ],
     album: [
       "/work/tiffany/tiffany-01.jpg",
       "/work/tiffany/tiffany-02.jpg",
@@ -83,6 +105,13 @@ export const events: EventItem[] = [
     kicker: "Selected Work",
     heroImage: "/covers/bvlgari.jpg",
     cardImage: "/covers/bvlgari.jpg",
+    films: [
+      {
+        vimeoId: "",
+        title: "BVLGARI Event Film",
+        poster: "/covers/bvlgari.jpg",
+      },
+    ],
     album: [
       "/work/bvlgari-perfume/bvlgari-perfume-01.jpg",
       "/work/bvlgari-perfume/bvlgari-perfume-02.jpg",
@@ -158,6 +187,7 @@ export const events: EventItem[] = [
     kicker: "Selected Work",
     heroImage: "/covers/marli.jpg",
     cardImage: "/covers/marli.jpg",
+    vimeoId: "1222692250",
     album: [
       "/work/marli/marli-01.jpg",
       "/work/marli/marli-02.jpg",
@@ -303,6 +333,7 @@ export const events: EventItem[] = [
     kicker: "Selected Work",
     heroImage: "/covers/benefit.jpg",
     cardImage: "/covers/benefit.jpg",
+    vimeoId: "1222695290",
     album: [
       "/work/benefit/benefit-01.jpg",
       "/work/benefit/benefit-02.jpg",
@@ -330,6 +361,7 @@ export const events: EventItem[] = [
     kicker: "Selected Work",
     heroImage: "/covers/black-tap.jpg",
     cardImage: "/covers/black-tap.jpg",
+    vimeoId: "1222679720",
     album: [
       "/work/black-tap/black-tap-01.jpg",
       "/work/black-tap/black-tap-02.jpg",
@@ -372,6 +404,7 @@ export const events: EventItem[] = [
     kicker: "Selected Work",
     heroImage: "/covers/lucid.jpg",
     cardImage: "/covers/lucid.jpg",
+    vimeoId: "1222747601",
     album: [
       "/work/lucid/lucid-02.jpg",
       "/work/lucid/lucid-03.jpg",
@@ -411,6 +444,13 @@ export const events: EventItem[] = [
     kicker: "Selected Work",
     heroImage: "/covers/udc.jpg",
     cardImage: "/covers/udc.jpg",
+    films: [
+      {
+        vimeoId: "",
+        title: "AlUla Event Film",
+        poster: "/covers/udc.jpg",
+      },
+    ],
     album: [
       "/work/udc/udc-01.jpg",
       "/work/udc/udc-02.png",
@@ -474,6 +514,12 @@ export const events: EventItem[] = [
   },
 ];
 
+/** Projects whose card opens a video lightbox have no inner page. */
+export function hasEventPage(event: EventItem) {
+  return !event.vimeoId;
+}
+
 export function getEventBySlug(slug: string) {
-  return events.find((event) => event.slug === slug);
+  const event = events.find((item) => item.slug === slug);
+  return event && hasEventPage(event) ? event : undefined;
 }

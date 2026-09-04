@@ -1055,6 +1055,91 @@ a {
 .brand-card-content { bottom: 28px; }
 .brand-card-content h3 { font-size: clamp(34px, 4vw, 54px); line-height: .9; letter-spacing: -.06em; text-transform: uppercase; font-weight: 900; }
 .brand-card-content p { margin-top: 16px; color: rgba(255,255,255,.68); line-height: 1.65; max-width: 420px; }
+
+/* Cards that open a film in a lightbox instead of linking to an event page */
+.brand-card-film {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  appearance: none;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.brand-card:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: -2px;
+}
+.brand-card-play,
+.film-card-play {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 64px;
+  height: 64px;
+  border: 1px solid rgba(255,255,255,.4);
+  border-radius: 50%;
+  background: rgba(2,7,17,.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 20px;
+  padding-left: 4px;
+  transition: .3s ease;
+}
+.brand-card:hover .brand-card-play,
+.film-card:hover .film-card-play {
+  background: var(--pink);
+  border-color: var(--pink);
+  transform: translate(-50%, -50%) scale(1.08);
+}
+.film-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+.film-card {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  border: 1px solid var(--line);
+  outline: none;
+  appearance: none;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+  background: linear-gradient(180deg, rgba(2,7,17,.25), rgba(2,7,17,.85)), var(--image);
+  background-size: cover;
+  background-position: center center;
+}
+.film-card:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: -2px;
+}
+.film-card-title {
+  position: absolute;
+  z-index: 2;
+  left: 24px;
+  right: 24px;
+  bottom: 22px;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: .26em;
+  text-transform: uppercase;
+  text-shadow: 0 1px 6px rgba(0,0,0,.85);
+}
 .event-hero { min-height: 78vh; }
 .event-overview { background: radial-gradient(circle at 18% 25%, rgba(240,0,168,.16), transparent 28%), radial-gradient(circle at 88% 42%, rgba(0,255,213,.12), transparent 24%), var(--bg); }
 .event-video {
@@ -1145,6 +1230,19 @@ a {
   object-fit: contain;
   border: 1px solid var(--line);
 }
+.lightbox-video {
+  width: min(90vw, 1280px);
+  aspect-ratio: 16 / 9;
+  max-height: 76vh;
+  border: 1px solid var(--line);
+  background: #000;
+}
+.lightbox-video iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
 .lightbox-close {
   position: absolute;
   top: 24px;
@@ -1222,4 +1320,5 @@ a {
   background-position: center center;
 }
 @media (max-width: 1100px) { .brand-card-grid, .album-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 900px) { .film-grid { grid-template-columns: 1fr; } }
 @media (max-width: 700px) { .brand-card-grid, .album-grid { grid-template-columns: 1fr; } .album-item { min-height: 330px; } }

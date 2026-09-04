@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { events } from "@/data/events";
+import WorkGrid from "@/components/WorkGrid";
 
 export const metadata: Metadata = {
   title: "Work | Eventcom",
@@ -24,7 +24,7 @@ export default function WorkPage() {
           <p className="page-intro">
             Explore brand events, launches, activations, and formal
             experiences. Each project opens into a dedicated event page with
-            a short description and photo album.
+            a photo album, or plays the event film.
           </p>
         </div>
       </section>
@@ -34,25 +34,7 @@ export default function WorkPage() {
           <div className="small-label">Brand Portfolio</div>
           <h2>Click a brand to view the event.</h2>
         </div>
-        <div className="brand-card-grid">
-          {events.map((event) => (
-            <Link
-              key={event.slug}
-              className="brand-card"
-              href={`/work/${event.slug}`}
-              style={
-                { "--image": `url('${event.cardImage}')` } as React.CSSProperties
-              }
-            >
-              <div className="brand-card-top" style={{ justifyContent: "flex-end" }}>
-                <b>View Event →</b>
-              </div>
-              <div className="brand-card-content">
-                <h3>{event.brand}</h3>
-              </div>
-            </Link>
-          ))}
-        </div>
+        <WorkGrid events={events} />
       </section>
 
       <section className="section services">
