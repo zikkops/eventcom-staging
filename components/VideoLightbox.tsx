@@ -5,10 +5,12 @@ import { useEffect } from "react";
 export default function VideoLightbox({
   vimeoId,
   title,
+  vertical = false,
   onClose,
 }: {
   vimeoId: string;
   title: string;
+  vertical?: boolean;
   onClose: () => void;
 }) {
   useEffect(() => {
@@ -33,7 +35,10 @@ export default function VideoLightbox({
       >
         ✕
       </button>
-      <div className="lightbox-video" onClick={(e) => e.stopPropagation()}>
+      <div
+        className={`lightbox-video${vertical ? " lightbox-video-vertical" : ""}`}
+        onClick={(e) => e.stopPropagation()}
+      >
         <iframe
           src={`https://player.vimeo.com/video/${vimeoId}?autoplay=1&title=0&byline=0&portrait=0&dnt=1`}
           title={title}

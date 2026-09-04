@@ -33,6 +33,7 @@ export default function EventFilms({ films }: { films: EventFilm[] }) {
         <VideoLightbox
           vimeoId={active.vimeoId}
           title={active.title}
+          vertical={active.vertical}
           onClose={() => setActive(null)}
         />
       )}

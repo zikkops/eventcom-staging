@@ -1243,6 +1243,13 @@ a {
   height: 100%;
   border: 0;
 }
+/* 9:16 films get an upright frame instead of pillarboxing inside 16:9 */
+.lightbox-video-vertical {
+  width: auto;
+  height: min(82vh, 1100px);
+  max-height: 82vh;
+  aspect-ratio: 9 / 16;
+}
 .lightbox-close {
   position: absolute;
   top: 24px;

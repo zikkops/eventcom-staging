@@ -4,6 +4,8 @@ export type EventFilm = {
   title: string;
   /** Cover photo shown before the film is played. */
   poster: string;
+  /** Set for a 9:16 film so the lightbox frames it upright. */
+  vertical?: boolean;
 };
 
 export type EventItem = {
@@ -75,23 +77,20 @@ export const events: EventItem[] = [
     heroImage: "/covers/tiffany.jpg",
     cardImage: "/covers/tiffany.jpg",
     films: [
-      // source: drive.google.com/file/d/1xdeFZpZcRid5jHH-G0iByDovaRGkLHaV
       {
-        vimeoId: "",
-        title: "Film 01",
-        poster: "/work/tiffany/tiffany-01.jpg",
+        vimeoId: "1222762672",
+        title: "Tiffany & Co. Activation",
+        poster: "/film-covers/tiffany-01.jpg",
       },
-      // source: drive.google.com/file/d/190Q_RNqE_k5L7zYwpsodliWlx18nr5KM
       {
-        vimeoId: "",
-        title: "Film 02",
-        poster: "/work/tiffany/tiffany-06.jpg",
+        vimeoId: "1222762674",
+        title: "Tiffany & Co. Opening",
+        poster: "/film-covers/tiffany-02.jpg",
       },
-      // source: drive.google.com/file/d/1rEDNN6MXgR6ziqqsDpnnpTX8ueZjjcrD
       {
-        vimeoId: "",
-        title: "Film 03",
-        poster: "/work/tiffany/tiffany-11.jpg",
+        vimeoId: "1222762673",
+        title: "Tiffany Centria",
+        poster: "/film-covers/tiffany-03.jpg",
       },
     ],
     album: [
@@ -119,41 +118,35 @@ export const events: EventItem[] = [
     heroImage: "/covers/bvlgari.jpg",
     cardImage: "/covers/bvlgari.jpg",
     films: [
-      // source: drive.google.com/file/d/1LJHzHqMks06BtSHvPD3ULDyveFaStlah
       {
-        vimeoId: "",
-        title: "Film 01",
-        poster: "/work/bvlgari-perfume/bvlgari-perfume-01.jpg",
+        vimeoId: "1222683878",
+        title: "BVLGARI Perfume",
+        poster: "/film-covers/bvlgari-01.jpg",
       },
-      // source: drive.google.com/file/d/1Fs1xpvLy2NBKIR6tG89hG57owMS4s_VV
       {
-        vimeoId: "",
-        title: "Film 02",
-        poster: "/work/bvlgari-perfume/bvlgari-perfume-05.jpg",
+        vimeoId: "1222685288",
+        title: "BVLGARI Activation",
+        poster: "/film-covers/bvlgari-02.jpg",
       },
-      // source: drive.google.com/file/d/1nYlmeD-Hszw4Ac1pbASWaboHCVBk97ME
       {
-        vimeoId: "",
-        title: "Film 03",
-        poster: "/work/bvlgari-perfume/bvlgari-perfume-09.png",
+        vimeoId: "1222685762",
+        title: "BVLGARI Activation II",
+        poster: "/film-covers/bvlgari-03.jpg",
       },
-      // source: drive.google.com/file/d/1ehR82DjM86-oZWqmEiNaqCY_mEAS23Cv
       {
-        vimeoId: "",
-        title: "Film 04",
-        poster: "/work/bvlgari-jewellery/bvlgari-jewellery-01.jpg",
+        vimeoId: "1222688644",
+        title: "BVLGARI Event",
+        poster: "/film-covers/bvlgari-04.jpg",
       },
-      // source: drive.google.com/file/d/1tZyOm6hJG3ng_kFNzW46xBg7hOjE6UBZ
       {
-        vimeoId: "",
-        title: "Film 05",
-        poster: "/work/bvlgari-jewellery/bvlgari-jewellery-05.jpg",
+        vimeoId: "1222688710",
+        title: "BVLGARI Amonae",
+        poster: "/film-covers/bvlgari-05.jpg",
       },
-      // source: drive.google.com/file/d/1seE_KVo8kkCDOok9XhnHgKXCuXnyy4zE
       {
-        vimeoId: "",
-        title: "Film 06",
-        poster: "/work/bvlgari-jewellery/bvlgari-jewellery-09.jpg",
+        vimeoId: "1222688727",
+        title: "BVLGARI Valentine’s Day",
+        poster: "/film-covers/bvlgari-06.jpg",
       },
     ],
     album: [
@@ -190,29 +183,26 @@ export const events: EventItem[] = [
     heroImage: "/covers/piaget.jpg",
     cardImage: "/covers/piaget.jpg",
     films: [
-      // source: drive.google.com/file/d/14bBxFm7dEexSTkHHdSAP9cgFHhjxxy2W
       {
-        vimeoId: "",
-        title: "Film 01",
-        poster: "/work/piaget/piaget-01.jpg",
+        vimeoId: "1222752184",
+        title: "Piaget Activation",
+        poster: "/film-covers/piaget-01.jpg",
       },
-      // source: drive.google.com/file/d/1Hr-tc1uNHkUzDHANJdK7hKG-KBM2UAyb
       {
-        vimeoId: "",
-        title: "Film 02",
-        poster: "/work/piaget/piaget-05.jpg",
+        vimeoId: "1222752186",
+        title: "Piaget Event",
+        poster: "/film-covers/piaget-02.jpg",
       },
-      // source: drive.google.com/file/d/1vmPu8m1VSVUpDPLYetFuZULIho9vhJeb
       {
-        vimeoId: "",
-        title: "Film 03",
-        poster: "/work/piaget/piaget-10.png",
+        vimeoId: "1222752185",
+        title: "Piaget Drone Projection",
+        poster: "/film-covers/piaget-03.jpg",
+        vertical: true,
       },
-      // source: drive.google.com/file/d/1qwbxsKpyxGsFR7U901qIDM6B-f4GpY9f
       {
-        vimeoId: "",
-        title: "Film 04",
-        poster: "/work/piaget/piaget-14.jpg",
+        vimeoId: "1222758591",
+        title: "Piaget Solitaire Event",
+        poster: "/film-covers/piaget-04.jpg",
       },
     ],
     album: [
@@ -522,29 +512,25 @@ export const events: EventItem[] = [
     heroImage: "/covers/udc.jpg",
     cardImage: "/covers/udc.jpg",
     films: [
-      // source: drive.google.com/file/d/1cEBxjqW-mgh96YnOV6-9PI1ZKg0_ktui
       {
-        vimeoId: "",
-        title: "Film 01",
-        poster: "/work/udc/udc-01.jpg",
+        vimeoId: "1222766311",
+        title: "UDC Founding Day",
+        poster: "/film-covers/udc-01.jpg",
       },
-      // source: drive.google.com/file/d/1dVANgHEGf_AFLMp52vFgPymJoGl_Z4Zn
       {
-        vimeoId: "",
-        title: "Film 02",
-        poster: "/work/udc/udc-04.jpg",
+        vimeoId: "1222766313",
+        title: "UDC Founding Day II",
+        poster: "/film-covers/udc-02.jpg",
       },
-      // source: drive.google.com/file/d/1g9EYOaCsiewM41fYt9A6kxG2rEtx7IMY
       {
-        vimeoId: "",
-        title: "Film 03",
-        poster: "/work/udc/udc-08.png",
+        vimeoId: "1222766310",
+        title: "UDC National Day",
+        poster: "/film-covers/udc-03.jpg",
       },
-      // source: drive.google.com/file/d/1EBRr26KCkPzuk_SjTAEs17fBC2vY2-ly
       {
-        vimeoId: "",
-        title: "Film 04",
-        poster: "/work/udc/udc-12.jpg",
+        vimeoId: "1222766312",
+        title: "UDC Ritz",
+        poster: "/film-covers/udc-04.jpg",
       },
     ],
     album: [
