@@ -52,6 +52,12 @@ export default function ContactPage() {
                 <a href="tel:+966570116716">+966 57 011 6716</a>
               </div>
               <div>
+                <strong>Instagram</strong>
+                <a href="https://www.instagram.com/eventcom.me/" target="_blank" rel="noreferrer">
+                  @eventcom.me
+                </a>
+              </div>
+              <div>
                 <strong>Location</strong>
                 <span>Beirut | Dubai | Abu Dhabi | Riyadh | Jeddah</span>
               </div>

@@ -35,6 +35,9 @@ export default function Footer() {
           </a>
           <a href="mailto:elias.eid@eventcom-me.com">elias.eid@eventcom-me.com</a>
           <a href="tel:+966570116716">+966 57 011 6716</a>
+          <a href="https://www.instagram.com/eventcom.me/" target="_blank" rel="noreferrer">
+            @eventcom.me
+          </a>
           <span>Beirut | Dubai | Abu Dhabi | Riyadh | Jeddah</span>
         </div>
       </div>
