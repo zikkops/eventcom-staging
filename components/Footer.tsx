@@ -30,9 +30,11 @@ export default function Footer() {
         </div>
         <div className="connect">
           <h4>Let&rsquo;s Connect</h4>
-          <span>eventcom-me.com</span>
-          <span>elias.eid@eventcom-me.com</span>
-          <span>+966 57 011 6716</span>
+          <a href="https://eventcom-me.com" target="_blank" rel="noreferrer">
+            eventcom-me.com
+          </a>
+          <a href="mailto:elias.eid@eventcom-me.com">elias.eid@eventcom-me.com</a>
+          <a href="tel:+966570116716">+966 57 011 6716</a>
           <span>Beirut | Dubai | Abu Dhabi | Riyadh | Jeddah</span>
         </div>
       </div>

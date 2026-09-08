@@ -991,7 +991,10 @@ a {
 .info-list { display:grid; gap:22px; margin-top:34px; }
 .info-list div { padding-bottom:22px; border-bottom:1px solid var(--line); }
 .info-list strong { display:block; color:#fff; font-size:12px; letter-spacing:.24em; text-transform:uppercase; margin-bottom:8px; }
-.info-list span { color:rgba(255,255,255,.62); line-height:1.7; }
+.info-list span,
+.info-list a { color:rgba(255,255,255,.62); line-height:1.7; }
+.info-list a:hover,
+.connect a:hover { color:var(--pink); }
 @media (max-width: 1100px) { .grid-2,.grid-3,.grid-4,.grid-5,.service-detail { grid-template-columns:1fr; } }
 @media (max-width: 700px) { .page-hero { padding-left:24px; padding-right:24px; } .nav { gap:16px; } .btn { padding:14px 18px; } }
 

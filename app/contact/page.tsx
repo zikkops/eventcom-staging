@@ -39,15 +39,17 @@ export default function ContactPage() {
             <div className="info-list">
               <div>
                 <strong>Website</strong>
-                <span>eventcom-me.com</span>
+                <a href="https://eventcom-me.com" target="_blank" rel="noreferrer">
+                  eventcom-me.com
+                </a>
               </div>
               <div>
                 <strong>Email</strong>
-                <span>elias.eid@eventcom-me.com</span>
+                <a href="mailto:elias.eid@eventcom-me.com">elias.eid@eventcom-me.com</a>
               </div>
               <div>
                 <strong>Mobile</strong>
-                <span>+966 57 011 6716</span>
+                <a href="tel:+966570116716">+966 57 011 6716</a>
               </div>
               <div>
                 <strong>Location</strong>
