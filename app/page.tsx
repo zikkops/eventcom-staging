@@ -44,7 +44,7 @@ const serviceRows = [
     bullets: ["Executive gatherings", "Product launches", "Retreats"],
     images: [
       "/covers/millerknoll.jpg",
-      "/covers/ksp.jpg",
+      "/homepage/corporate-2.png",
     ],
   },
   {
