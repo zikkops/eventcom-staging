@@ -31,6 +31,9 @@ export default async function EventPage({
     notFound();
   }
 
+  // Projects with films show only the films; the photo album is dropped.
+  const hasFilms = Boolean(event.films?.some((film) => film.vimeoId));
+
   return (
     <>
       <section
@@ -43,8 +46,8 @@ export default async function EventPage({
           <div className="page-kicker">{event.kicker}</div>
           <h1 className="page-title">{event.brand}</h1>
           <div className="cta-row">
-            <Link className="btn btn-pink" href="#album">
-              View Photo Album →
+            <Link className="btn btn-pink" href={hasFilms ? "#films" : "#album"}>
+              {hasFilms ? "Watch Films →" : "View Photo Album →"}
             </Link>
             <Link className="btn" href="/work">
               Back to Work
@@ -53,8 +56,8 @@ export default async function EventPage({
         </div>
       </section>
 
-      {event.films && event.films.some((film) => film.vimeoId) && (
-        <section className="section event-overview">
+      {hasFilms && event.films && (
+        <section id="films" className="section event-overview">
           <div className="services-heading">
             <div className="small-label">Watch</div>
             <h2>Event films.</h2>
@@ -79,13 +82,15 @@ export default async function EventPage({
         </section>
       )}
 
-      <section id="album" className="section services">
-        <div className="services-heading">
-          <div className="small-label">Photo Album</div>
-          <h2>Event moments.</h2>
-        </div>
-        <PhotoAlbum images={event.album} vertical={event.verticalAlbum} />
-      </section>
+      {!hasFilms && (
+        <section id="album" className="section services">
+          <div className="services-heading">
+            <div className="small-label">Photo Album</div>
+            <h2>Event moments.</h2>
+          </div>
+          <PhotoAlbum images={event.album} vertical={event.verticalAlbum} />
+        </section>
+      )}
 
       <section className="section contact mini-contact">
         <div>
