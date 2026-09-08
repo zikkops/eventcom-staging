@@ -43,8 +43,8 @@ const serviceRows = [
     copy: "Conferences, executive gatherings, product launches, and retreats.",
     bullets: ["Executive gatherings", "Product launches", "Retreats"],
     images: [
-      "https://eventcom.vipmindslb.com/wp-content/uploads/2026/06/Copy-of-A7407648-scaled.jpg",
-      "https://eventcom.vipmindslb.com/wp-content/uploads/2026/06/Copy-of-DSC02851-scaled.jpg",
+      "/covers/millerknoll.jpg",
+      "/covers/ksp.jpg",
     ],
   },
   {
@@ -98,25 +98,25 @@ const workCategories = [
     number: "01",
     title: "Event Experiences",
     image:
-      "https://eventcom.vipmindslb.com/wp-content/uploads/2026/06/Copy-of-A7409319-scaled.jpg",
+      "/covers/cartier.jpg",
   },
   {
     number: "02",
     title: "Live Moments",
     image:
-      "https://eventcom.vipmindslb.com/wp-content/uploads/2026/06/Copy-of-DSC01144-scaled.jpg",
+      "/covers/black-tap.jpg",
   },
   {
     number: "03",
     title: "Creative Content",
     image:
-      "https://eventcom.vipmindslb.com/wp-content/uploads/2026/06/PIAGET-2172-scaled.jpg",
+      "/covers/piaget.jpg",
   },
   {
     number: "04",
     title: "Brand Activations",
     image:
-      "https://eventcom.vipmindslb.com/wp-content/uploads/2026/06/Copy-of-DSC02795-scaled.jpg",
+      "/covers/bvlgari.jpg",
   },
 ];
 

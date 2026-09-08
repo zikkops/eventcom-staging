@@ -1102,7 +1102,7 @@ a {
 }
 .film-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 22px;
 }
 .film-card {
@@ -1112,8 +1112,9 @@ a {
   width: 100%;
   padding: 0;
   margin: 0;
-  border: 1px solid var(--line);
+  border: 0;
   outline: none;
+  box-shadow: none;
   appearance: none;
   font: inherit;
   color: inherit;
@@ -1234,7 +1235,7 @@ a {
   width: min(90vw, 1280px);
   aspect-ratio: 16 / 9;
   max-height: 76vh;
-  border: 1px solid var(--line);
+  border: 0;
   background: #000;
 }
 .lightbox-video iframe {
@@ -1326,6 +1327,6 @@ a {
   background-size: cover;
   background-position: center center;
 }
-@media (max-width: 1100px) { .brand-card-grid, .album-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 900px) { .film-grid { grid-template-columns: 1fr; } }
-@media (max-width: 700px) { .brand-card-grid, .album-grid { grid-template-columns: 1fr; } .album-item { min-height: 330px; } }
+@media (max-width: 1100px) { .brand-card-grid, .album-grid, .film-grid { grid-template-columns: repeat(2, 1fr); } }
+
+@media (max-width: 700px) { .brand-card-grid, .album-grid, .film-grid { grid-template-columns: 1fr; } .album-item { min-height: 330px; } }

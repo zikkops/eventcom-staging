@@ -49,7 +49,7 @@ export default function AboutPage() {
             style={
               {
                 "--image":
-                  "url('https://eventcom.vipmindslb.com/wp-content/uploads/2026/06/7-scaled.jpg')",
+                  "url('/covers/fairmont.jpg')",
               } as React.CSSProperties
             }
           />
