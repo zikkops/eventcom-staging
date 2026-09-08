@@ -962,10 +962,11 @@ a {
 .page-copy p { margin-top:26px; color:rgba(255,255,255,.72); line-height:1.85; font-size:17px; }
 .full-image {
   min-height:460px;
-  background:linear-gradient(180deg, rgba(2,7,17,.1), rgba(2,7,17,.78)), var(--image);
+  background:var(--image);
   background-size:cover;
   background-position:center center;
-  border:1px solid var(--line);
+  border:0;
+  box-shadow:none;
 }
 .service-detail { display:grid; grid-template-columns:.7fr 1.2fr .8fr; gap:36px; align-items:center; padding:38px 0; border-bottom:1px solid var(--line); }
 .service-detail:first-child { border-top:1px solid var(--line); }
