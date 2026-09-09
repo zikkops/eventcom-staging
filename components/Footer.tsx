@@ -33,7 +33,7 @@ export default function Footer() {
           <a href="https://eventcom-me.com" target="_blank" rel="noreferrer">
             eventcom-me.com
           </a>
-          <a href="mailto:elias.eid@eventcom-me.com">elias.eid@eventcom-me.com</a>
+          <a href="mailto:Hello@eventcom-me.com">Hello@eventcom-me.com</a>
           <a href="tel:+966570116716">+966 57 011 6716</a>
           <a href="https://www.instagram.com/eventcom.me/" target="_blank" rel="noreferrer">
             @eventcom.me

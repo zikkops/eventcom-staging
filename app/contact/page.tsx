@@ -45,7 +45,7 @@ export default function ContactPage() {
               </div>
               <div>
                 <strong>Email</strong>
-                <a href="mailto:elias.eid@eventcom-me.com">elias.eid@eventcom-me.com</a>
+                <a href="mailto:Hello@eventcom-me.com">Hello@eventcom-me.com</a>
               </div>
               <div>
                 <strong>Mobile</strong>
@@ -65,7 +65,7 @@ export default function ContactPage() {
           </div>
           <form
             className="contact-form"
-            action="mailto:elias.eid@eventcom-me.com"
+            action="mailto:Hello@eventcom-me.com"
             method="post"
             encType="text/plain"
           >

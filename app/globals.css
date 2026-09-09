@@ -73,6 +73,67 @@ a {
   color: #fff;
 }
 
+/* Mobile burger + popup menu */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  margin: 0;
+  border: 1px solid rgba(255,255,255,.25);
+  background: rgba(255,255,255,.05);
+  box-shadow: none;
+  appearance: none;
+  cursor: pointer;
+  align-items: center;
+}
+.nav-toggle span {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: #fff;
+  transition: .3s ease;
+}
+.nav-toggle.is-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle.is-open span:nth-child(2) { opacity: 0; }
+.nav-toggle.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.nav-toggle:focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; }
+.mobile-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 49;
+  padding: 24px 48px 32px;
+  background: rgba(2,7,17,.98);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--line);
+  max-height: calc(100dvh - 100%);
+  overflow-y: auto;
+  flex-direction: column;
+  gap: 24px;
+  animation: fadeUp .22s ease both;
+}
+.mobile-menu-links {
+  display: grid;
+  gap: 4px;
+}
+.mobile-menu-links a {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+  color: rgba(255,255,255,.72);
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: -.02em;
+  text-transform: uppercase;
+}
+.mobile-menu-links a.active { color: #fff; }
+.mobile-menu .btn { align-self: flex-start; }
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -666,7 +727,7 @@ a {
 
 .work-card {
   position: relative;
-  min-height: 320px;
+  aspect-ratio: 16 / 9;
   overflow: hidden;
   background: #07111d;
 }
@@ -832,8 +893,17 @@ a {
 }
 
 @media (max-width: 1100px) {
-  .nav-links {
+  .nav-links,
+  .nav-cta {
     display: none;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  .mobile-menu.is-open {
+    display: flex;
   }
 
   .split,
