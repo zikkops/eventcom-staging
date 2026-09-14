@@ -14,7 +14,7 @@ import path from "node:path";
 import { events as localEvents } from "../data/events";
 import { db, insertEvent, upsertSettings } from "../server/db";
 import { collectStrings, eventFromItem, isLocalImage } from "../server/eventData";
-import { uploadImage } from "../server/imagekit";
+import { uploadedFiles, uploadImage } from "../server/imagekit";
 import { SCHEMA } from "../server/schema";
 
 const UPLOAD_CONCURRENCY = 4;
@@ -30,18 +30,28 @@ const fileNameFor = (src: string) => src.replace(/^\//, "").replace(/[^\w.-]+/g,
 
 async function uploadAll(sources: string[]) {
   const urls = new Map<string, string>();
-  const queue = [...sources];
+
+  // A run that stopped part way left some photos up already; reuse those.
+  const existing = await uploadedFiles();
+  const queue = sources.filter((src) => {
+    const url = existing.get(fileNameFor(src));
+    if (url) urls.set(src, url);
+    return !url;
+  });
+  console.log(`  ${urls.size} already on ImageKit, ${queue.length} to upload.`);
+
+  const total = queue.length;
   let done = 0;
 
   async function worker() {
     for (let src = queue.shift(); src; src = queue.shift()) {
       const fullPath = path.join(publicDir, src);
       if (!existsSync(fullPath)) {
-        console.log(`  [${++done}/${sources.length}] skipped, not on disk: ${src}`);
+        console.log(`  [${++done}/${total}] skipped, not on disk: ${src}`);
         continue;
       }
       urls.set(src, await uploadImage(createReadStream(fullPath), fileNameFor(src)));
-      console.log(`  [${++done}/${sources.length}] ${src}`);
+      console.log(`  [${++done}/${total}] ${src}`);
     }
   }
 

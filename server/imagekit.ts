@@ -20,18 +20,44 @@ function api() {
   return client;
 }
 
+// Some originals are over 15 MB, which can outlast the client's one-minute default.
+const UPLOAD_TIMEOUT_MS = 10 * 60 * 1000;
+
 /** Server-side upload, used by the setup script. */
 export async function uploadImage(file: UploadFile, fileName: string): Promise<string> {
-  const response = await api().files.upload({
-    file,
-    fileName,
-    folder: UPLOAD_FOLDER,
-    // Re-running setup replaces the same photo instead of piling up copies.
-    useUniqueFileName: false,
-    overwriteFile: true,
-  });
+  const response = await api().files.upload(
+    {
+      file,
+      fileName,
+      folder: UPLOAD_FOLDER,
+      // Re-running setup replaces the same photo instead of piling up copies.
+      useUniqueFileName: false,
+      overwriteFile: true,
+    },
+    { timeout: UPLOAD_TIMEOUT_MS, maxRetries: 4 },
+  );
   if (!response.url) throw new Error(`ImageKit didn't return a URL for ${fileName}.`);
   return response.url;
+}
+
+/** Every file already in the upload folder, by name, with its URL; lets setup resume where it stopped. */
+export async function uploadedFiles(): Promise<Map<string, string>> {
+  const files = new Map<string, string>();
+
+  for (let skip = 0; ; skip += PAGE_SIZE) {
+    const batch = await api().assets.list({
+      path: UPLOAD_FOLDER,
+      type: "file",
+      limit: PAGE_SIZE,
+      skip,
+    });
+    for (const file of batch) {
+      if ("url" in file && file.name && file.url) files.set(String(file.name), String(file.url));
+    }
+    if (batch.length < PAGE_SIZE) break;
+  }
+
+  return files;
 }
 
 /**
