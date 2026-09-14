@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { events, getEventBySlug, hasEventPage } from "@/data/events";
+import { hasEventPage } from "@/data/events";
+import { getEventPage, getEvents } from "@/server/content";
 import PhotoAlbum from "@/components/PhotoAlbum";
 import EventFilms from "@/components/EventFilms";
 
-export function generateStaticParams() {
+export async function generateStaticParams() {
+  const events = await getEvents();
   return events.filter(hasEventPage).map((event) => ({ slug: event.slug }));
 }
 
@@ -15,7 +17,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const event = getEventBySlug(slug);
+  const event = await getEventPage(slug);
   return { title: event ? `${event.brand} | Eventcom` : "Eventcom" };
 }
 
@@ -25,7 +27,7 @@ export default async function EventPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const event = getEventBySlug(slug);
+  const event = await getEventPage(slug);
 
   if (!event) {
     notFound();

@@ -1,8 +1,5 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -16,6 +13,8 @@ export const metadata: Metadata = {
     "We shape the energy behind every event — creating experiences that connect, inspire, and leave a lasting impact.",
 };
 
+// The public site's header, footer and stylesheet live in app/(site)/layout.tsx,
+// so the admin panel under /admin renders without them.
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -23,11 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={inter.variable}>
-      <body>
-        <Header />
-        {children}
-        <Footer />
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

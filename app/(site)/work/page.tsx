@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
-import { events } from "@/data/events";
+import { getEvents } from "@/server/content";
 import WorkGrid from "@/components/WorkGrid";
 
 export const metadata: Metadata = {
   title: "Work | Eventcom",
 };
 
-export default function WorkPage() {
+export default async function WorkPage() {
+  const events = await getEvents();
+
   return (
     <>
       <section

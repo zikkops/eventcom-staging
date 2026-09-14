@@ -1,37 +1,90 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Eventcom
 
-## Getting Started
+The Eventcom website, with an admin panel for the events on the Work page.
+The backend follows the Konkreet site: a Neon Postgres database, ImageKit for
+photos, and a password-protected panel at `/admin`.
 
-First, run the development server:
+## Running
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run dev     # http://localhost:3000
+npm run build
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## How the content works
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Without a database** (no `DATABASE_URL`), the site renders
+  [data/events.ts](data/events.ts), exactly as before the backend existed. The
+  admin login page says the database isn't connected.
+- **With a database set up**, `/work` and `/work/[slug]` read the events from
+  Postgres. Saving anything in the admin refreshes those pages straight away;
+  a 60-second limit also catches changes made outside the panel.
+- `data/events.ts` stays in the repo as the fallback and as the seed for a
+  fresh database. The photos in `public/` are never deleted.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Setting up the admin
 
-## Learn More
+1. **Database.** Create a project on [Neon](https://neon.tech) (a separate one
+   from Konkreet) and copy its connection string from **Connect**.
+2. **Photos.** In [ImageKit](https://imagekit.io), open **Developer options**
+   and copy the public key, private key and URL endpoint.
+3. **Keys.** Copy `.env.example` to `.env.local` and fill in the four values.
+4. **Check them:**
 
-To learn more about Next.js, take a look at the following resources:
+   ```bash
+   npm run check
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+5. **Fill the database** with today's events. This uploads their photos to
+   ImageKit (into an `/eventcom` folder); add `-- --local` to keep using the
+   photos in `public/` instead. It never overwrites existing content, so it is
+   safe to re-run.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+   ```bash
+   npm run db:setup
+   ```
 
-## Deploy on Vercel
+6. **Create your login.** The first account is the main admin, the only one
+   who can manage other users. It prints a password once.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   ```bash
+   npm run admin:create -- you@example.com "Your Name"
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# eventcom-staging
+7. Log in at `/admin/login` and change the password under **My account**.
+
+## Deploying on Vercel
+
+Add the same four variables under **Project Settings → Environment Variables**
+and redeploy. Until they are set, the live site keeps rendering
+`data/events.ts` and nothing changes for visitors.
+
+## What the admin covers
+
+- **Events**: add, edit, delete, and drag to reorder. Each event has a card
+  photo, and its card either opens an event page or plays one Vimeo film in a
+  lightbox. An event page has a main photo, films (Vimeo link, title, poster,
+  portrait flag) and a photo album. A full Vimeo share link can be pasted as it
+  is. An event with films shows them instead of its album, as the site already
+  did.
+- **Users**: the main admin adds and removes people and resets passwords.
+  Everyone else sees only Events and their own password.
+- **Photos** upload from the browser straight to ImageKit, and a photo removed
+  from every event is deleted there too.
+
+Logins use scrypt password hashing and database sessions: the cookie holds a
+random token and the database stores only its hash, sessions last 14 days,
+and an email is locked for 15 minutes after 10 failed attempts. Every admin
+action checks the login itself, and `/admin` is marked `noindex`.
+
+## Structure
+
+| Path | What it holds |
+| --- | --- |
+| [app/(site)/](app/(site)/) | The public pages, with the header and footer layout |
+| [app/admin/](app/admin/) | The admin panel: login, events, users, account |
+| [server/](server/) | Database, logins, ImageKit and data shaping (server only) |
+| [lib/imageUrl.ts](lib/imageUrl.ts) | ImageKit URL helpers shared by the site and the panel |
+| [scripts/](scripts/) | `check`, `db:setup` and `admin:create` |
+| [data/events.ts](data/events.ts) | The built-in events: fallback and seed |
