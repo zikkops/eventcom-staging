@@ -237,29 +237,6 @@ a {
   margin-top: 36px;
 }
 
-.play-reel {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin-top: 56px;
-  font-size: 11px;
-  font-weight: 900;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.8);
-}
-
-.play-icon {
-  width: 44px;
-  height: 44px;
-  border: 1px solid rgba(255,255,255,0.30);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.05);
-}
-
 .stats {
   position: relative;
   padding: 56px 64px;

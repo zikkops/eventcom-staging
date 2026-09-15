@@ -139,9 +139,6 @@ export default function Home() {
               Let&rsquo;s Talk →
             </Link>
           </div>
-          <div className="play-reel">
-            <span className="play-icon">▶</span> Play Reel
-          </div>
         </div>
       </section>
 
