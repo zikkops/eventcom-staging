@@ -8,10 +8,10 @@ export default function Footer() {
         <div>
           <div className="footer-brand">
             <Image
-              src="/eventcom-logo.png"
+              src="/eventcom-logo-white.png"
               alt="Eventcom"
-              width={196}
-              height={40}
+              width={173}
+              height={32}
             />
           </div>
           <p className="footer-copy">

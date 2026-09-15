@@ -55,10 +55,10 @@ export default function Header() {
     <header className="nav">
       <Link className="brand" href="/">
         <Image
-          src="/eventcom-logo.png"
+          src="/eventcom-logo-white.png"
           alt="Eventcom"
-          width={196}
-          height={40}
+          width={194}
+          height={36}
           priority
         />
       </Link>
