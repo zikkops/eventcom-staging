@@ -188,7 +188,7 @@ export async function resetPassword(_: FormResult, formData: FormData): Promise<
   const [target] = await db()`SELECT id, email, role FROM admins WHERE id = ${id}`;
   if (!target) return { ok: false, message: "That user no longer exists." };
   if (target.role === "super") {
-    return { ok: false, message: "Change the main admin's password under My account." };
+    return { ok: false, message: "A super admin changes their own password under My account." };
   }
 
   const password = newPassword();

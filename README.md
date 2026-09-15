@@ -45,7 +45,7 @@ npm start
    npm run db:setup
    ```
 
-6. **Create your login.** The first account is the main admin, the only one
+6. **Create your login.** The first account is the super admin, the only one
    who can manage other users. It prints a password once.
 
    ```bash
@@ -68,7 +68,7 @@ and redeploy. Until they are set, the live site keeps rendering
   portrait flag) and a photo album. A full Vimeo share link can be pasted as it
   is. An event with films shows them instead of its album, as the site already
   did.
-- **Users**: the main admin adds and removes people and resets passwords.
+- **Users**: the super admin adds and removes people and resets passwords.
   Everyone else sees only Events and their own password.
 - **Photos** upload from the browser straight to ImageKit, and a photo removed
   from every event is deleted there too.

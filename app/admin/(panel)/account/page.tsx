@@ -14,7 +14,7 @@ export default async function AccountPage() {
         {[
           { label: "Name", value: me.name || "—" },
           { label: "Email", value: me.email },
-          { label: "Access", value: me.role === "super" ? "Main admin (manages users)" : "Can edit events" },
+          { label: "Access", value: me.role === "super" ? "Super admin (manages users)" : "Can edit events" },
         ].map((row) => (
           <div key={row.label}>
             <dt>{row.label}</dt>

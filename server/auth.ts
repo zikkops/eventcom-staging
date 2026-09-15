@@ -91,7 +91,7 @@ export async function requireAdmin(): Promise<Admin> {
  */
 export async function requireSuperAdmin(): Promise<Admin> {
   const admin = await requireAdmin();
-  if (admin.role !== "super") throw new Error("Only the main admin can manage accounts.");
+  if (admin.role !== "super") throw new Error("Only a super admin can manage accounts.");
   return admin;
 }
 

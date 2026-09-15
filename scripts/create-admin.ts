@@ -39,7 +39,7 @@ async function main() {
   if (!row.created) await sql`DELETE FROM sessions WHERE admin_id = ${row.id}`;
 
   console.log(row.created ? `Created ${email}.` : `Reset the password for ${email}.`);
-  if (role === "super") console.log("This account is the main admin (manages users).");
+  if (role === "super") console.log("This account is a super admin (manages users).");
   console.log(`Password: ${password}`);
   console.log("Log in at /admin/login, then change it under My account.");
 }

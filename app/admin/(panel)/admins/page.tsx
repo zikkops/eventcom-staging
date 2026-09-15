@@ -24,7 +24,7 @@ export default async function AdminsPage() {
             <div className="adm-list-body">
               <p className="adm-strong">
                 {admin.name || admin.email}
-                {admin.role === "super" && <span className="adm-badge">Main admin</span>}
+                {admin.role === "super" && <span className="adm-badge">Super admin</span>}
               </p>
               <p className="adm-hint">
                 {admin.email} · added {new Date(admin.createdAt).toLocaleDateString("en-GB")}
