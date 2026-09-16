@@ -561,12 +561,19 @@ a {
   letter-spacing: 0.38em;
 }
 
+/* The content is two identical copies and the animation slides exactly half
+   the width. Spacing sits after every item rather than between them, so each
+   copy includes its trailing space and the loop restarts without a jump. */
 .marquee {
   display: flex;
   width: max-content;
-  gap: 64px;
   white-space: nowrap;
   animation: marquee 26s linear infinite;
+}
+
+.marquee > * {
+  flex-shrink: 0;
+  margin-right: 64px;
 }
 
 .marquee span {

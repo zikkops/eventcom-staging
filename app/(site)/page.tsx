@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import StatCounter from "@/components/StatCounter";
 
@@ -250,14 +251,15 @@ export default function Home() {
         <p>Trusted by leading brands</p>
         <div className="marquee">
           {[...brandLogos, ...brandLogos].map((logo, i) => (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img
+            // Optimised to its display size and loaded straight away: lazy
+            // loading left logos blank as they slid in from the side.
+            <Image
               key={`${logo.src}-${i}`}
               src={logo.src}
               alt=""
               width={logo.width}
               height={logo.height}
-              loading="lazy"
+              loading="eager"
             />
           ))}
         </div>
