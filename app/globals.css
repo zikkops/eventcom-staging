@@ -853,6 +853,10 @@ a {
   gap: 32px;
 }
 
+.footer-bottom a:hover {
+  color: var(--pink);
+}
+
 @keyframes marquee {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
@@ -1007,6 +1011,39 @@ a {
 .panel p { color:rgba(255,255,255,.68); line-height:1.75; font-size:15px; }
 .page-copy h2 { font-size:clamp(44px,6vw,78px); line-height:.92; letter-spacing:-.06em; text-transform:uppercase; font-weight:900; }
 .page-copy p { margin-top:26px; color:rgba(255,255,255,.72); line-height:1.85; font-size:17px; }
+
+/* Legal pages (privacy policy, terms of use): a shorter heading band and a
+   readable column of text. */
+.legal-hero { min-height: auto; padding-bottom: 56px; }
+.legal-hero .page-title { font-size: clamp(44px, 7vw, 92px); }
+.legal { padding-top: 64px; }
+.legal-body { max-width: 780px; }
+.legal-body > p,
+.legal-body ul { color: rgba(255,255,255,.72); font-size: 17px; line-height: 1.85; }
+.legal-body > p { margin-top: 18px; }
+.legal-body > p:first-child { margin-top: 0; }
+.legal-body h2 {
+  margin-top: 56px;
+  font-size: clamp(20px, 2.2vw, 26px);
+  font-weight: 900;
+  letter-spacing: -.01em;
+  text-transform: uppercase;
+  color: #fff;
+}
+.legal-body ul { margin-top: 12px; padding-left: 22px; }
+.legal-body li::marker { color: var(--pink); }
+.legal-contact { display: grid; gap: 10px; margin-top: 20px; }
+.legal-contact div { display: flex; flex-wrap: wrap; gap: 4px 16px; align-items: baseline; }
+.legal-contact dt {
+  min-width: 90px;
+  color: var(--pink);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: .24em;
+  text-transform: uppercase;
+}
+.legal-contact dd { color: rgba(255,255,255,.72); font-size: 17px; line-height: 1.6; }
+.legal-contact a:hover { color: var(--pink); }
 .full-image {
   min-height:460px;
   background:var(--image);
@@ -1051,10 +1088,9 @@ a {
 
 /* Brand logo strip (live-site "trusted by" carousel, replacing the text marquee) */
 .brand-strip .marquee { align-items: center; }
+/* Each logo's width and height come from its proportions (logoSize in the
+   home page), so there is no shared height or width cap here. */
 .brand-strip .marquee img {
-  height: 40px;
-  width: auto;
-  max-width: 160px;
   object-fit: contain;
   opacity: 0.7;
   filter: grayscale(1) brightness(1.6);

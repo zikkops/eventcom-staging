@@ -33,19 +33,19 @@ export default function Footer() {
           <a href="https://eventcom-me.com" target="_blank" rel="noreferrer">
             eventcom-me.com
           </a>
-          <a href="mailto:Hello@eventcom-me.com">Hello@eventcom-me.com</a>
-          <a href="tel:+966570116716">+966 57 011 6716</a>
+          <a href="mailto:hello@eventcom-me.com">hello@eventcom-me.com</a>
           <a href="https://www.instagram.com/eventcom.me/" target="_blank" rel="noreferrer">
             @eventcom.me
           </a>
+          <a href="tel:+966570116716">+966 57 011 6716</a>
           <span>Beirut | Dubai | Abu Dhabi | Riyadh | Jeddah</span>
         </div>
       </div>
       <div className="footer-bottom">
         <span>© 2026 Eventcom. All rights reserved.</span>
         <div>
-          <span>Privacy Policy</span>
-          <span>Terms of Use</span>
+          <Link href="/privacy-policy">Privacy Policy</Link>
+          <Link href="/terms-of-use">Terms of Use</Link>
         </div>
       </div>
     </footer>

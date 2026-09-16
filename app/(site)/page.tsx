@@ -56,42 +56,58 @@ const serviceRows = [
   },
 ];
 
-const brandLogos = [
-  "almaviva.png",
-  "ambassade-de-france.png",
-  "benefit-cosmetics-logo-1.png",
-  "black-tap.png",
-  "business-france.png",
-  "bvlgari.png",
-  "corneliani-white-transparent.png",
-  "dhow.png",
-  "fairmont.png",
-  "fred.png",
-  "isabel-mayfair.png",
-  "ita.png",
-  "iwc.png",
-  "kiko-milano-white-transparent-exact.png",
-  "ksp-white.png",
-  "la-french-touch.png",
-  "lamborghini.png",
-  "lucid-owners-clube.png",
-  "lucidc.png",
-  "marli.png",
-  "maxmara.png",
-  "millerknoll.png",
-  "mjs.png",
-  "mont-blanc.png",
-  "okx.png",
-  "panerai.png",
-  "pasquale-bruni.png",
-  "piaget-logo-1.png",
-  "range-rover.png",
-  "sfs.png",
-  "tagheuer.png",
-  "tiffany-co-idt7es3ldx-1.png",
-  "time-vallee.png",
-  "van-cleef.png",
-].map((file) => `/logos/${file}`);
+// Logos come in every shape, from square badges to long wordmarks. One shared
+// height made the long ones tiny, so each is sized from its proportions:
+// the wider a logo, the shorter it gets, and all of them carry similar weight.
+const logoSize = (width: number, height: number) => {
+  const ratio = width / height;
+  const shown = Math.min(56, Math.max(16, 34 * Math.pow(ratio / 3, -0.4)));
+  const shownWidth = Math.min(240, shown * ratio);
+  return { width: Math.round(shownWidth), height: Math.round(shownWidth / ratio) };
+};
+
+// Each file in public/logos with its pixel size.
+const logoFiles: [file: string, width: number, height: number][] = [
+  ["almaviva.png", 1281, 240],
+  ["ambassade-de-france.png", 234, 240],
+  ["benefit-cosmetics-logo-1.png", 719, 240],
+  ["black-tap.png", 884, 240],
+  ["business-france.png", 361, 240],
+  ["bvlgari.png", 1251, 159],
+  ["corneliani-white-transparent.png", 1383, 161],
+  ["dhow.png", 856, 240],
+  ["fairmont.png", 587, 240],
+  ["fred.png", 713, 240],
+  ["isabel-mayfair.png", 1448, 110],
+  ["ita.png", 466, 240],
+  ["iwc.png", 561, 240],
+  ["kiko-milano-white-transparent-exact.png", 696, 240],
+  ["ksp-white.png", 260, 240],
+  ["la-french-touch.png", 170, 240],
+  ["lamborghini.png", 436, 110],
+  ["lucid-owners-clube.png", 612, 240],
+  ["lucidc.png", 1119, 183],
+  ["marli.png", 672, 220],
+  ["maxmara.png", 1182, 240],
+  ["millerknoll.png", 899, 161],
+  ["mjs.png", 125, 99],
+  ["mont-blanc.png", 434, 240],
+  ["okx.png", 734, 235],
+  ["panerai.png", 162, 19],
+  ["pasquale-bruni.png", 1195, 122],
+  ["piaget-logo-1.png", 619, 240],
+  ["range-rover.png", 209, 25],
+  ["sfs.png", 953, 240],
+  ["tagheuer.png", 265, 229],
+  ["tiffany-co-idt7es3ldx-1.png", 800, 98],
+  ["time-vallee.png", 343, 111],
+  ["van-cleef.png", 1432, 197],
+];
+
+const brandLogos = logoFiles.map(([file, width, height]) => ({
+  src: `/logos/${file}`,
+  ...logoSize(width, height),
+}));
 
 const workCategories = [
   {
@@ -233,9 +249,16 @@ export default function Home() {
       <section className="brand-strip">
         <p>Trusted by leading brands</p>
         <div className="marquee">
-          {[...brandLogos, ...brandLogos].map((src, i) => (
+          {[...brandLogos, ...brandLogos].map((logo, i) => (
             // eslint-disable-next-line @next/next/no-img-element
-            <img key={`${src}-${i}`} src={src} alt="" loading="lazy" />
+            <img
+              key={`${logo.src}-${i}`}
+              src={logo.src}
+              alt=""
+              width={logo.width}
+              height={logo.height}
+              loading="lazy"
+            />
           ))}
         </div>
       </section>

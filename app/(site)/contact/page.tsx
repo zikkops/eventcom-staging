@@ -45,17 +45,17 @@ export default function ContactPage() {
               </div>
               <div>
                 <strong>Email</strong>
-                <a href="mailto:Hello@eventcom-me.com">Hello@eventcom-me.com</a>
-              </div>
-              <div>
-                <strong>Mobile</strong>
-                <a href="tel:+966570116716">+966 57 011 6716</a>
+                <a href="mailto:hello@eventcom-me.com">hello@eventcom-me.com</a>
               </div>
               <div>
                 <strong>Instagram</strong>
                 <a href="https://www.instagram.com/eventcom.me/" target="_blank" rel="noreferrer">
                   @eventcom.me
                 </a>
+              </div>
+              <div>
+                <strong>Mobile</strong>
+                <a href="tel:+966570116716">+966 57 011 6716</a>
               </div>
               <div>
                 <strong>Location</strong>
@@ -65,7 +65,7 @@ export default function ContactPage() {
           </div>
           <form
             className="contact-form"
-            action="mailto:Hello@eventcom-me.com"
+            action="mailto:hello@eventcom-me.com"
             method="post"
             encType="text/plain"
           >
